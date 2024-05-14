@@ -1,31 +1,26 @@
 from flask_sqlalchemy import SQLAlchemy
+from app import db
 
 db = SQLAlchemy()
 
+#Space
 class Space(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    spacename = db.Column(db.String(100), nullable=False)
-    building = db.Column(db.String(100), nullable=False)
-    floor = db.Column(db.String(100), nullable=False)
-    capacity = db.Column(db.Integer, nullable=False)
-    amenities = db.Column(db.Text)
+    name = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.Text)
 
-    def __init__(self, spacename, building, floor, capacity, amenities):
-        self.spacename = spacename
-        self.building = building
-        self.floor = floor
-        self.capacity = capacity
-        self.amenities = amenities
+    def __init__(self, name, description):
+        self.name = name
+        self.description = description
 
 
-
+#User 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), nullable=False)
     role = db.Column(db.String(50), nullable=False)
 
-from app import db
-
+#Booking spaces
 class Booking(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
