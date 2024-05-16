@@ -1,5 +1,3 @@
-from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, create_access_token
 from datetime import timedelta
@@ -120,6 +118,7 @@ def get_bookings():
         }
         booking_list.append(booking_data)
     return jsonify({"success": True, "bookings": booking_list}), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True)

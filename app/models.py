@@ -37,3 +37,4 @@ class Booking(db.Model):
     status = db.Column(db.String(20), nullable=False, default='pending')
     payment_status = db.Column(db.String(20), nullable=False, default='unpaid')
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
