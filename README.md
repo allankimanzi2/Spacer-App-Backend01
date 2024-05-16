@@ -1,46 +1,37 @@
-# Spacer-App-Backend.
-
-## Installation Guide
-
-### Prerequisites
+Spacer-App-Backend.
+Installation Guide
+Prerequisites
 
 Before proceeding with the installation, make sure you have the following prerequisites installed on your system:
 
-- Python 3.8.13
-- pip package manager
+    Python 3.8.13
+    pip package manager
 
-### Installation Steps
+Installation Steps
 
-1. **Clone the repository:**
-- Using HTTPS
-   ```bash
-   git clone https://github.com/allankimanzi2/Spacer-App-Backend.git
-   ```
- - Using SSH
-    ```bash
-   git clone git@github.com:allankimanzi2/Spacer-App-Backend.git
-   ```
+    Clone the repository:
 
-2. **Navigate to the project directory:**
+    Using HTTPS
 
-   ```bash
-   cd Spacer-App-Backend
-   ```
+    git clone https://github.com/allankimanzi2/Spacer-App-Backend.git
 
-3. **Create a virtual environment :**
+Using SSH
 
-   ```bash
-   python -m venv .venv
-   ```
+git clone git@github.com:allankimanzi2/Spacer-App-Backend.git
 
-4. **Activate the virtual environment :**
+Navigate to the project directory:
 
-   ```bash
-   source .venv/bin/activate
-   ```
+cd Spacer-App-Backend
 
-5. **Install the project dependencies:**
+Create a virtual environment :
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+python -m venv .venv
+
+Activate the virtual environment :
+
+source .venv/bin/activate
+
+Install the project dependencies:
+
+pip install -r requirements.txt
+
