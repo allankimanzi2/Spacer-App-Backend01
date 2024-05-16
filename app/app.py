@@ -37,6 +37,7 @@ class Payment(db.Model):
     date = db.Column(db.DateTime, nullable=False)
     note = db.Column(db.String(255))
 
+
 @app.route('/book_space', methods=['POST'])
 def book_space():
     data = request.json
