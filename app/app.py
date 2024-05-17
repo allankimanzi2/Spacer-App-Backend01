@@ -1,9 +1,12 @@
+from flask import Flask, request, jsonify
 from flask_bcrypt import Bcrypt
-from flask_jwt_extended import JWTManager, create_access_token
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required
+from flask_migrate import Migrate
 from datetime import timedelta
-from models import db, User, Space
+from models import db, User, Space, Booking
 from config import DATABASE_CONFIG  # Import the config
 import secrets
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://{DATABASE_CONFIG['user']}:{DATABASE_CONFIG['pw']}@{DATABASE_CONFIG['host']}:{DATABASE_CONFIG['port']}/{DATABASE_CONFIG['db']}"
@@ -16,6 +19,7 @@ app.config['JWT_SECRET_KEY'] = jwt_secret_key
 
 # Initialize extensions
 db.init_app(app)
+migrate = Migrate(app, db)
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
@@ -25,8 +29,8 @@ def index():
     return "This is a basic Flask application"
 
 # Admin Login Route with JWT Authentication
-@app.route('/login', methods=['POST'])
-def login():
+@app.route('/adminlogin', methods=['POST'])
+def adminlogin():
     data = request.get_json()
 
     # Check login credentials

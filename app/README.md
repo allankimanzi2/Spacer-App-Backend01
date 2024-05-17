@@ -4,7 +4,7 @@ Backend installation
 
 <!-- pip install flask flask-sqlalchemy flask-login --> Still in progress making 
 
-pip flask flask-sqlalchemy
+pip install flask flask-sqlalchemy
 
 pip install alembic
 
