@@ -2,7 +2,7 @@
 
 DATABASE_CONFIG = {
     'user': 'postgres',
-    'pw': '#Sulumeti28',
+    'pw': 'boss2023',
     'db': 'spacer',
     'host': 'localhost',
     'port': '5432',
